@@ -42,23 +42,17 @@ Airplane.prototype.land = function () {
 function Person(name, age) {
   this.name = name
   this.age = age 
-  this.stomach = []; 
-};
+  this.stomach = [];
+  };
 
-Person.eat = function (someFood){
-  if (Person.stomach < 10) {this.stomach.push(someFood)}
-else {return 'too much food'}
+Person.prototype.eat = function (edible){
+  if (this.stomach > 10) {return 'Belly Full'}
+  else {this.stomach.push(edible)}
 }
 
-Person.poop = function (){
+Person.prototype.poop = function (){
   this.stomach.splice(0,this.stomach.length)
-};
-
-Person.toString = function (){
-  return `${this.name}, ${this.age}`
 }
-
-
 
 
 
